@@ -98,7 +98,7 @@ document.querySelectorAll('[data-project]').forEach(card => {
     const project = projects[card.dataset.project];
     modalTitle.textContent = project.title;
     modalTags.innerHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
-    modalContent.innerHTML = project.blocks.map(([heading, content]) => 
+    modalContent.innerHTML = project.blocks.map(([heading, content]) =>
       `<div class="modal-block"><strong>${heading}</strong>${content.startsWith('<') ? content : `<p>${content}</p>`}</div>`
     ).join('');
     modalLink.href = project.link || '#projects';
@@ -113,42 +113,16 @@ document.querySelectorAll('[data-project]').forEach(card => {
   });
 });
 
-projectModal.querySelectorAll('[data-close-modal]').forEach(element => 
+projectModal.querySelectorAll('[data-close-modal]').forEach(element =>
   element.addEventListener('click', closeProjectModal)
 );
 
-document.addEventListener('keydown', event => { 
-  if (event.key === 'Escape' && projectModal.classList.contains('open')) closeProjectModal(); 
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && projectModal.classList.contains('open')) closeProjectModal();
 });
 
-// Close modal when clicking the discuss CTA (it already links to #contact)
+// Close modal when clicking the discuss CTA (it links to #contact)
 modalDiscuss.addEventListener('click', closeProjectModal);
-
-// ===== Inquiry form =====
-const inquiryForm = document.getElementById('inquiryForm');
-const formNote = document.getElementById('formNote');
-inquiryForm.addEventListener('submit', async event => {
-  event.preventDefault();
-  const submitButton = inquiryForm.querySelector('button[type="submit"]');
-  submitButton.disabled = true;
-  submitButton.textContent = 'Sending...';
-  formNote.textContent = 'Sending your inquiry...';
-  try {
-    const response = await fetch(inquiryForm.action, {
-      method: 'POST',
-      body: new FormData(inquiryForm),
-      headers: { Accept: 'application/json' }
-    });
-    if (!response.ok) throw new Error('Form submission failed');
-    inquiryForm.reset();
-    formNote.textContent = 'Thanks — your inquiry has been received. I’ll get back to you within 24–48 hours with next steps.';
-  } catch (error) {
-    formNote.textContent = 'Something went wrong. Please try again shortly or reach me on WhatsApp.';
-  } finally {
-    submitButton.disabled = false;
-    submitButton.innerHTML = 'Send inquiry <span aria-hidden="true">↗</span>';
-  }
-});
 
 // ===== Active nav link on scroll =====
 const sectionLinks = [...document.querySelectorAll('.nav-links a')];
@@ -159,7 +133,7 @@ if ('IntersectionObserver' in window && observedSections.length) {
   const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      sectionLinks.forEach(link => 
+      sectionLinks.forEach(link =>
         link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`)
       );
     });
