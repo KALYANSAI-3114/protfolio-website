@@ -1438,3 +1438,19 @@ footer {
     width: 100%;
   }
 }
+
+
+/* FIX: Make all portfolio sections visible */
+
+.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+.reveal.is-visible {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
