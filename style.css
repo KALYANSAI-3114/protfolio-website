@@ -31,7 +31,6 @@ p { color: var(--muted); } a { color: inherit; text-decoration: none; } ul { lis
 .nav-links a:hover, .nav-links a.active { background: #edf5fb; color: var(--ink); }
 .nav-links a:hover::after, .nav-links a.active::after { right: 11px; }
 .nav-cta { display: flex; align-items: center; gap: 15px; }
-.nav-cta .btn-grad { min-height: 38px; padding: 9px 16px; border-radius: 8px; box-shadow: 0 7px 16px rgba(36,116,232,.2); }
 .burger { display: none; width: 42px; height: 42px; border: 1px solid rgba(16,36,58,.18); border-radius: 9px; background: #fff; cursor: pointer; }
 .burger span { display: block; width: 17px; height: 2px; margin: 4px auto; background: var(--ink); transition: transform .2s, opacity .2s; }
 .burger.open span:first-child { transform: translateY(6px) rotate(45deg); }
@@ -165,20 +164,6 @@ p { color: var(--muted); } a { color: inherit; text-decoration: none; } ul { lis
 .proc-step h4 { margin-bottom: 7px; font: 700 13px "Inter"; }
 .proc-step p { font-size: 11px; line-height: 1.5; }
 
-.final-cta { padding: 0 0 105px; }
-.cta-panel { position: relative; overflow: hidden; padding: 82px 30px; border-radius: var(--radius); background: var(--warm); display: grid; grid-template-columns: .8fr 1.2fr; gap: 45px; align-items: start; text-align: left; }
-.inquiry-intro .eyebrow { color: var(--ink); }
-.inquiry-intro h2 { font-size: clamp(32px, 4.5vw, 48px); }
-.inquiry-intro p { margin: 18px 0 0; color: rgba(16,36,58,.72); line-height: 1.65; }
-.inquiry-form { padding: 23px; border: 1px solid rgba(16,36,58,.14); border-radius: 14px; background: rgba(255,255,255,.55); }
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px; }
-.inquiry-form label { display: flex; flex-direction: column; gap: 7px; color: var(--ink); font-size: 11px; font-weight: 800; }
-.inquiry-form label span { color: var(--muted); font-weight: 500; }
-.inquiry-form input, .inquiry-form select, .inquiry-form textarea { width: 100%; border: 1px solid rgba(16,36,58,.18); border-radius: 7px; padding: 11px 12px; background: rgba(255,255,255,.85); color: var(--ink); font: 13px "Inter"; }
-.inquiry-form textarea { resize: vertical; }
-.form-wide { grid-column: 1 / -1; }
-.form-note { margin-top: 12px; color: var(--muted); font-size: 10px; line-height: 1.5; }
-
 footer { padding: 66px 0 27px; background: var(--ink); color: #fff; }
 .foot-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 35px; margin-bottom: 48px; }
 .foot-brand p { max-width: 310px; margin-top: 13px; color: #b8cbd9; font-size: 13px; line-height: 1.65; }
@@ -213,7 +198,6 @@ footer { padding: 66px 0 27px; background: var(--ink); color: #fff; }
   .stack-groups { grid-template-columns: 1fr; }
   .ach-grid { grid-template-columns: repeat(2, 1fr); }
   .process-grid { grid-template-columns: repeat(2, 1fr); }
-  .cta-panel { grid-template-columns: 1fr; gap: 25px; }
   .foot-grid { grid-template-columns: 1fr 1fr; }
   .oss-card { grid-template-columns: 1fr; text-align: center; }
   .nav-inner { padding: 0 0 10px; }
@@ -232,10 +216,6 @@ footer { padding: 66px 0 27px; background: var(--ink); color: #fff; }
   .ach-grid { gap: 10px; }
   .ach-card { padding: 20px 10px; }
   .foot-grid { grid-template-columns: 1fr; gap: 25px; }
-  .cta-panel { padding: 64px 20px; }
-  .form-grid { grid-template-columns: 1fr; }
-  .form-wide { grid-column: auto; }
-  .inquiry-form { padding: 17px; }
   .modal-card { padding: 30px 20px 24px; }
   .modal-actions { flex-direction: column; }
   .modal-actions .btn { width: 100%; }
